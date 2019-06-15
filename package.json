@@ -1,6 +1,6 @@
 {
   "name": "@regru/stylelint-formatter-junit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A fork of the junit formatter for stylelint, but with relative path & gitlab compatible",
   "repository": "regru/stylelint-formatter-relative-junit",
   "license": "MIT",
