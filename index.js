@@ -2,11 +2,20 @@ const xmlBuilder = require('xmlbuilder');
 const path = require("path")
 
 module.exports = (stylelintResults) => {
+  let tests = 0;
+  let failures = 0;
   const xmlRoot = xmlBuilder.create('testsuites', { encoding: 'utf-8' })
                             .att('package', 'stylelint.rules');
-  const testSuites = stylelintResults.map((testSuite) => parseSuite(testSuite));
+  const testSuites = stylelintResults.map((testSuite) => {
+    const suite = parseSuite(testSuite);
+    tests += suite.testsuite['@tests'];
+    failures += suite.testsuite['@failures'];
+    return suite;
+  });
 
   return xmlRoot
+    .att('tests', tests)
+    .att('failures', failures)
     .element(testSuites)
     .end({ pretty: true });
 };
@@ -23,7 +32,7 @@ function parseSuite(testSuite) {
       '@name': suiteName,
       '@failures': failuresCount,
       '@errors': failuresCount,
-      '@tests': failuresCount || '1',
+      '@tests': failuresCount || 1,
       testcase: testCases
     }
   };
