@@ -39,7 +39,8 @@ function parseFailedCase(testCase, source) {
   } = testCase;
 
   return {
-    '@name': rule,
+    '@name': `${source}:${line}:${column} - ${rule}`,
+    '@classname': rule,
     failure: {
       '@type': severity,
       '@message': text,

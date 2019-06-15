@@ -1,12 +1,12 @@
 {
-  "name": "stylelint-formatter-relative-junit",
-  "version": "0.0.3",
-  "description": "A fork of the junit formatter for stylelint, but with relative path",
-  "repository": "elao/stylelint-formatter-relative-junit",
+  "name": "@regru/stylelint-formatter-junit",
+  "version": "0.1.0",
+  "description": "A fork of the junit formatter for stylelint, but with relative path & gitlab compatible",
+  "repository": "regru/stylelint-formatter-relative-junit",
   "license": "MIT",
   "author": {
-    "name": "Elao",
-    "url": "http://elao.com"
+    "name": "REG.RU",
+    "url": "https://www.reg.com"
   },
   "main": "index.js",
   "files": [
@@ -18,7 +18,8 @@
   "keywords": [
     "stylelint",
     "formatter",
-    "stylelint formatter"
+    "stylelint formatter",
+    "junit"
   ],
   "dependencies": {
     "xmlbuilder": "^8.2.2"
